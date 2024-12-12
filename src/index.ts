@@ -31,5 +31,4 @@ const luiz: Pessoa = {
     isStudent: true
 }
 
-
 console.log(luiz);

@@ -20,4 +20,5 @@ const luiz = {
     weight: '190kg',
     isStudent: true,
 };
+
 console.log(luiz);

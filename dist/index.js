@@ -1,24 +1,35 @@
-const add = (a, b) => {
-    return a + b;
-};
+// conteudo da aula 1
+
+const add = (a: number, b: number): any => {
+  return a + b ;
+}
 
 const num1 = 15;
-const num2 = 20;
+const num2 = 10;
 
 const result = add(num1, num2);
 
 console.log(`A soma de ${num1} e ${num2} é: ${result}`);
 
-const pedro = {
-    name: 'Pedro',
-    age: 23,
-    weight: '80kg',
-    isStudent: false
-};
-const luiz = {
-    name: 'Luiz',
-    weight: '190kg',
-    isStudent: true,
-};
+interface Pessoa {
+  name: string,
+  age: number | null,
+  weight: string,
+  isStudent: boolean
+}
 
-console.log(luiz);
+const fabio: Pessoa = {
+  name: 'Fabio',
+  age: 34,
+  weight: '90kg',
+  isStudent: false
+}
+
+const luiz: Pessoa = {
+  name: 'Luiz',
+  age: null,
+  weight: '190kg',
+  isStudent: true,
+}
+
+console.log(luiz)

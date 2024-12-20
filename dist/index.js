@@ -1,37 +1,59 @@
 "use strict";
-//   DEVER DE CASA - AULA 2
-// 1) Crie no arquivo index.ts da nossa aplicação uma função que retorne no typescrip baseado em um enum com as seguintes condições: se for do tipo 1, é "Admin", se for do tipo 2 é "usuário"
-// 2) Crie no arquivo do index.ts 3 arrays com tipos diferentes, sendo um de tipo de um objeto personalizável, exemplo: People, Animal e etc.
-var UserType;
-(function (UserType) {
-    UserType[UserType["Admin"] = 1] = "Admin";
-    UserType[UserType["User"] = 2] = "User";
-})(UserType || (UserType = {}));
-function getUserType(userType) {
-    if (userType === UserType.Admin) {
-        return "Admin";
-    }
-    else if (userType === UserType.User) {
-        return "Usuário";
-    }
-    else {
-        return "Tipo desconhecido";
-    }
+// function getFirstElement<T>(arr: T[]): T {
+//     return arr[0];
+//   }
+//   const numbers = [1, 2, 3];
+//   const strings = ['a', 'b', 'c'];
+//   console.log(getFirstElement(numbers));
+//   console.log(getFirstElement(strings)); 
+//   function identity<T>(value: T): T {
+//     return value;
+//   }
+//   console.log(identity<number>(42)); 
+//   console.log(identity<string>("Hello")); 
+//   function merge<T, U>(obj1: T, obj2: U): T & U {
+//     return { ...obj1, ...obj2 };
+//   }
+//   const result = merge({ name: 'John' }, { age: 30 });
+//   console.log(result);
+//   class Box<T> {
+//     private content: T;
+//     constructor(content: T) {
+//       this.content = content;
+//     }
+//     getContent(): T {
+//       return this.content;
+//     }
+//   }
+//   const stringBox = new Box<string>("A book");
+//   const numberBox = new Box<number>(123);
+//   console.log(stringBox.getContent()); // "A book"
+//   console.log(numberBox.getContent()); // 123
+//   interface KeyValue<K, V> {
+//     key: K;
+//     value: V;
+//   }
+//   const item: KeyValue<number, string> = { key: 1, value: "Apple" };
+//   const item2: KeyValue<string, number> = { key: "Apple", value: 2 };
+//   console.log(item);
+//   console.log(item2);
+//   function getLength<T extends { length: number }>(item: T): number {
+//     return item.length;
+//   }
+//   console.log(getLength("Hello")); // 5
+//   console.log(getLength([1, 2, 3])); // 3
+//   // console.log(getLength(42)); // Erro: number não possui propriedade 'length'
+//   function mergeWithId<T extends { id: number }, U>(obj1: T, obj2: U): T & U {
+//     return { ...obj1, ...obj2 };
+//   }
+//   const merged = mergeWithId({ id: 1, name: "John" }, { age: 30 });
+//   console.log(merged); // { id: 1, name: 'John', age: 30 }
+function mergeObjects(obj1, obj2) {
+    return Object.assign(Object.assign({}, obj1), obj2);
 }
-console.log(getUserType(UserType.Admin));
-console.log(getUserType(UserType.User));
-const peopleArray = [
-    { id: 1, name: "Pedro", age: 23 },
-    { id: 2, name: "Gerson", age: 35 },
-];
-const animalsArray = [
-    { species: "Cachorro", name: "Trovão", isWild: false },
-    { species: "Tigre", name: "Rex", isWild: true },
-];
-const productsArray = [
-    { id: 101, productName: "Tablet", price: 1500 },
-    { id: 102, productName: "Smartphone", price: 800 },
-];
-console.log("People Array:", peopleArray);
-console.log("Animals Array:", animalsArray);
-console.log("Products Array:", productsArray);
+const obj1 = { name: "Alice" };
+const obj2 = { age: 25 };
+const result = mergeObjects(obj1, obj2);
+console.log(result);
+const item = { valor1: "Alice", valor2: 32, valor3: true };
+console.log(item);
